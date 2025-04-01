@@ -32,7 +32,7 @@ public class Comanda implements Serializable {
     @Column( name = "estado", nullable = false)
     private Estado estado;
     
-    @Column( name = "total_acumulado", nullable = false)
+    @Column( name = "total_acumulado", nullable = false) // ahorita se cambia es acumulado
     private double totalAcumulado;
 
     public Comanda() {
@@ -60,6 +60,38 @@ public class Comanda implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(Date fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
+    public String getFolio() {
+        return folio;
+    }
+
+    public void setFolio(String folio) {
+        this.folio = folio;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public double getTotalAcumulado() {
+        return totalAcumulado;
+    }
+
+    public void setTotalAcumulado(double totalAcumulado) {
+        this.totalAcumulado = totalAcumulado;
     }
 
    

@@ -29,7 +29,10 @@ public class DetalleComanda implements Serializable {
     private String nota;
     
     @Column( name = "precio_unitario", nullable = false)
-    private Date fechaHora;
+    private double precioUnitario;
+    
+    @Column( name = "importe_total", nullable = false) //este es calculado ahorita lo cambiamos
+    private double importeTotal;
 
     public Long getId() {
         return id;
@@ -37,6 +40,38 @@ public class DetalleComanda implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getNota() {
+        return nota;
+    }
+
+    public void setNota(String nota) {
+        this.nota = nota;
+    }
+
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    public double getImporteTotal() {
+        return importeTotal;
+    }
+
+    public void setImporteTotal(double importeTotal) {
+        this.importeTotal = importeTotal;
     }
 
     

@@ -28,12 +28,25 @@ public class Mesa implements Serializable {
     @Column( name = "numero_mesa", nullable = false)
     private int numeroMesa;
 
+    public Mesa() {
+    }
+    
+    
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getNumeroMesa() {
+        return numeroMesa;
+    }
+
+    public void setNumeroMesa(int numeroMesa) {
+        this.numeroMesa = numeroMesa;
     }
 
     
