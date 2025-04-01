@@ -5,12 +5,15 @@
 package moduloIngredientesEntidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import moduloProductosEntidades.ProductoOcupaIngrediente;
 
 /**
  *
@@ -21,22 +24,69 @@ public class Ingrediente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_ingrediente", nullable = false)
     private Long id;
-    
+
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
-    
+
+    @Column(name = "stock", nullable = false)
     private Long stock;
-    
+
+    @Column(name = "unidad_medida", nullable = false, length = 50)
     private String unidadMedida;
-    
-//    @OneToMany
-//    private List<ProductoOcupaIngrediente>  productoIngredientes = new ArrarList<>();
+
+    @OneToMany
+    private List<ProductoOcupaIngrediente> ingredientes = new ArrayList<>();
 
     public Ingrediente() {
     }
 
-    
-    
+    public Ingrediente(Long id, String nombre, Long stock, String unidadMedida) {
+        this.id = id;
+        this.nombre = nombre;
+        this.stock = stock;
+        this.unidadMedida = unidadMedida;
+    }
+
+    public Ingrediente(String nombre, Long stock, String unidadMedida) {
+        this.nombre = nombre;
+        this.stock = stock;
+        this.unidadMedida = unidadMedida;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Long getStock() {
+        return stock;
+    }
+
+    public void setStock(Long stock) {
+        this.stock = stock;
+    }
+
+    public String getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(String unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
+
+    public List<ProductoOcupaIngrediente> getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(List<ProductoOcupaIngrediente> ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
     public Long getId() {
         return id;
     }
@@ -45,6 +95,4 @@ public class Ingrediente implements Serializable {
         this.id = id;
     }
 
-   
-    
 }
