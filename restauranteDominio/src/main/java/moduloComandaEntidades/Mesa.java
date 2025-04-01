@@ -5,7 +5,6 @@
 package moduloComandaEntidades;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,19 +16,17 @@ import javax.persistence.Id;
  * @author isaac
  */
 @Entity
-public class DetalleComanda implements Serializable {
+public class Mesa implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column( name = "cantidad", nullable = false)
-    private int cantidad;
     
-    @Column( name = "nota", nullable = true)
-    private String nota;
-    
-    @Column( name = "precio_unitario", nullable = false)
-    private Date fechaHora;
+    @Id
+    @Column( name = "numero_mesa", nullable = false)
+    private int numeroMesa;
 
     public Long getId() {
         return id;
@@ -39,5 +36,6 @@ public class DetalleComanda implements Serializable {
         this.id = id;
     }
 
+    
     
 }

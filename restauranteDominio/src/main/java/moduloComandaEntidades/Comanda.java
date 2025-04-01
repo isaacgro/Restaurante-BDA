@@ -34,6 +34,24 @@ public class Comanda implements Serializable {
     
     @Column( name = "total_acumulado", nullable = false)
     private double totalAcumulado;
+
+    public Comanda() {
+    }
+
+    public Comanda(Long id, Date fechaHora, String folio, Estado estado, double totalAcumulado) {
+        this.id = id;
+        this.fechaHora = fechaHora;
+        this.folio = folio;
+        this.estado = estado;
+        this.totalAcumulado = totalAcumulado;
+    }
+
+    public Comanda(Date fechaHora, String folio, Estado estado, double totalAcumulado) {
+        this.fechaHora = fechaHora;
+        this.folio = folio;
+        this.estado = estado;
+        this.totalAcumulado = totalAcumulado;
+    }
     
 
     public Long getId() {
