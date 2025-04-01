@@ -31,7 +31,7 @@ public class Ingrediente implements Serializable {
     private String nombre;
 
     @Column(name = "stock", nullable = false)
-    private Long stock;
+    private Integer stock;
 
     @Column(name = "unidad_medida", nullable = false, length = 50)
     private String unidadMedida;
@@ -42,14 +42,14 @@ public class Ingrediente implements Serializable {
     public Ingrediente() {
     }
 
-    public Ingrediente(Long id, String nombre, Long stock, String unidadMedida) {
+    public Ingrediente(Long id, String nombre, Integer stock, String unidadMedida) {
         this.id = id;
         this.nombre = nombre;
         this.stock = stock;
         this.unidadMedida = unidadMedida;
     }
 
-    public Ingrediente(String nombre, Long stock, String unidadMedida) {
+    public Ingrediente(String nombre, Integer stock, String unidadMedida) {
         this.nombre = nombre;
         this.stock = stock;
         this.unidadMedida = unidadMedida;
@@ -63,11 +63,11 @@ public class Ingrediente implements Serializable {
         this.nombre = nombre;
     }
 
-    public Long getStock() {
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(Long stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 
