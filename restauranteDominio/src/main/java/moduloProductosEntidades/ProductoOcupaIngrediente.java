@@ -49,7 +49,6 @@ public class ProductoOcupaIngrediente implements Serializable {
     public ProductoOcupaIngrediente() {
     }
     
-    
 
     public Long getId() {
         return id;
