@@ -2,6 +2,14 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <persistence-unit name="ConexionPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>moduloClienteEntidades.Cliente</class>
+    <class>moduloClienteEntidades.ClienteFrecuente</class>
+    <class>moduloComandaEntidades.Comanda</class>
+    <class>moduloComandaEntidades.DetalleComanda</class>
+    <class>moduloComandaEntidades.Mesa</class>
+    <class>moduloIngredientesEntidades.Ingrediente</class>
+    <class>moduloProductosEntidades.Producto</class>
+    <class>moduloProductosEntidades.ProductoOcupaIngrediente</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/burritoselburro?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
