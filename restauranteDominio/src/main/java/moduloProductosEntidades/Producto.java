@@ -23,10 +23,9 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class Producto implements Serializable {
-
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_Producto", nullable = false)
     private Long id;
     
     @Column(name = "nombre", nullable = false, length = 100)
