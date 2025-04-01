@@ -5,6 +5,8 @@
 package moduloClienteEntidades;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,45 +16,17 @@ import javax.persistence.Id;
  *
  * @author isaac
  */
-@Entity
-public class ClienteFrecuente implements Serializable {
+@Entity 
+@DiscriminatorValue("1")
+public class ClienteFrecuente extends Cliente implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ClienteFrecuente)) {
-            return false;
-        }
-        ClienteFrecuente other = (ClienteFrecuente) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "moduloClienteEntidades.ClienteFrecuente[ id=" + id + " ]";
-    }
+    @Column(name = "puntos", nullable = false)
+    private Integer puntos;
+    
+    @Column(name = "gasto_acumulado", nullable = false) 
+    private double gastoAcumulado;
+    
+    @Column ( name = "visitas", nullable = false) 
+    private double visitas;
     
 }
